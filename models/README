@@ -1,0 +1,68 @@
+README for "reg.r", "ann.r", and "ccat.r" scripts.
+Author: Mario A. Gutierrez (mag262@txstate.edu)
+Last Updated: 3 March 2015
+
+--------------------------------------------------------------------------------
+Using the Linear Regression "reg.r" or Neural Network "ann.r" scripts:
+--------------------------------------------------------------------------------
+
+   Supported command-line arguments:
+   --------------------------------------------------------------------
+   --predict [filename]  : use provided data for prediction.
+   --dataset [filename]  : use provided data for training.
+   --testset [filename]  : use provided data for error testing.
+   --m [amd|intel]       : which performance counter names to use.
+   
+   Important Notes:
+   --------------------------------------------------------------------
+   * If no data file is specified it will attempt to open "data.dat"
+   
+   * Train the model by using the dataset flag. The trained model 
+     data will automatically be saved in a .mdl file in the directory where 
+     the script is exectued.
+     
+   * Use the "--predict" flag after you've trained the model and it
+     will predict values using the provided data file.
+     
+   * Must have the R programming environment installed.
+
+
+   Examples (done in a terminal window or command prompt):
+   --------------------------------------------------------------------
+   
+   <TRAINING THE MODELS>
+   
+   * Use some data in "filename" for training with the Linear Regression model.
+     
+     "Rscript reg.r --dataset filename"
+   
+   * Use some data in "filename" for training with Neural Network model.
+     
+     "Rscript ann.r --dataset filename"
+   
+   
+   <PREDICTION WITH THE MODELS>
+   
+   * Use data in filename.txt for prediction with the Linear Regression model.
+   
+      "Rscript reg.r --predict filename"
+      
+   * Use data in filename.txt for prediction with the Neural Network model.
+   
+      "Rscript ann.r --predict filename"
+   
+   
+--------------------------------------------------------------------------------
+Using the "ccat.r" script for concatenation of datasets.
+--------------------------------------------------------------------------------
+
+   Open a terminal window and enter:
+
+   "Rscript [path-to-ccat.r] [path-to-datafile_1] ... [path-to-datafile_n] 
+                                                 [--out  [path-to-outputfile]]"
+   
+   - Use the "--out" flag if you want to specify an output file name.
+     Otherwise, it will by default output to "ccat.dat" in the directory
+     where the script is.
+     
+     
